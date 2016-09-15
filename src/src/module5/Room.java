@@ -24,6 +24,8 @@ public class Room {
 
 
 
+
+
     public long getId() {
         return id;
     }
@@ -95,5 +97,17 @@ public class Room {
         result = 31 * result + hotelName.hashCode();
         result = 31 * result + cityName.hashCode();
         return result;
+    }
+
+    @Override
+    public String toString() {
+        return "Room{" +
+                "id=" + id +
+                ", price=" + price +
+                ", persons=" + persons +
+                ", dateAvailableFrom=" + dateAvailableFrom +
+                ", hotelName='" + hotelName + '\'' +
+                ", cityName='" + cityName + '\'' +
+                '}';
     }
 }
