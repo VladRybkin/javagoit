@@ -6,7 +6,7 @@ import java.util.Date;
  * Created by Vlad on 11.09.2016.
  */
 public class TripAdvisorAPI implements API {
-    public Room[] rooms  = new Room[5];
+    private Room[] rooms  = new Room[5];
     public TripAdvisorAPI() {
         Room room1 = new Room(1, 200, 3, new Date(20072016), "Kyivhotel", "Kyiv");
         rooms[0]=room1;
@@ -18,6 +18,7 @@ public class TripAdvisorAPI implements API {
         rooms[3]=room4;
         Room room5 = new Room(5, 200, 3, new Date(20072016), "Kyivhotel", "Kyiv");
         rooms[4]=room5;
+        rooms =new Room[]{room1, room2, room3, room4, room5};
 
         //rooms[5] = new Room(5, 600, 3, new Date(24072016), "Kyivhotel", "Kyiv");
         //long id, int price, int persons, Date dateAvailableFrom, String hotelName, String cityName
