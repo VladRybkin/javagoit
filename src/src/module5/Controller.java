@@ -23,22 +23,29 @@ public class Controller {
         Room[] request=new Room[request1.length+request2.length+request3.length];
 
 
-        return null;
+        return  request;
     }
+
     Room[] check(API api1, API api2){
+        Room[] roomsFromapi1=api1.getAll();
+        Room[] roomsFromapi2=api2.getAll();
 
-        //api1.findRooms(0, 0, null, null);
-        int price =100;
-        int persons =2;
-        String city="kyiv";
-        String hotel ="Kyivhotel";
-        Room[] res1=api1.findRooms(price, persons, city, hotel);
-        Room[] res2=api2.findRooms(price, persons, city, hotel);
-       // res1.equals(res2);
-        return null;
+        Room[] room=new Room[1000];
+        int count=0;
+        for(int i=0;i<roomsFromapi1.length;i++){
+            for (int j=i;j<roomsFromapi1.length;j++){
+                if(roomsFromapi1[i].equals(roomsFromapi2[j])){
+                    room[count]=roomsFromapi1[j];
+                    count++;
+                }
+            }
+        }
 
+        return room;
     }
 
 }
+
+
 
 

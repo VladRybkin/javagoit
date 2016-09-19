@@ -28,4 +28,8 @@ public class BookingComAPI implements API {
     public Room[] findRooms(int price, int persons, String city, String hotel) {
         return null;
     }
+    @Override
+    public Room[] getAll() {
+        return new Room[0];
+    }
 }

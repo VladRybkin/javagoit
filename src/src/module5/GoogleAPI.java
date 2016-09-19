@@ -28,12 +28,9 @@ public class GoogleAPI implements API {
         Room findroom[]=new Room[10];
         return null;
     }
-
-    public Room[] getRooms() {
-        return rooms;
+    @Override
+    public Room[] getAll() {
+        return new Room[0];
     }
 
-    public void setRooms(Room[] rooms) {
-        this.rooms = rooms;
-    }
 }

@@ -8,7 +8,8 @@ import java.util.Date;
 public class Main {
     public static void main(String[] args) {
         Controller controller=new Controller();
-        //controller.requstRooms(3, 200, "Kyivhotel", "Kyiv");
+        controller.check(new BookingComAPI(), new TripAdvisorAPI());
+      //  controller.requstRooms(3, 200, "Kyivhotel", "Kyiv");
         DAO daOimpl = new DAOimpl();
         daOimpl.findById(1);
     }
