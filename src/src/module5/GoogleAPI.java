@@ -46,10 +46,5 @@ public class GoogleAPI implements API {
         return rooms;
     }
 
-    @Override
-    public String toString() {
-        return "GoogleAPI{" +
-                "rooms=" + Arrays.toString(rooms) +
-                '}';
-    }
+
 }

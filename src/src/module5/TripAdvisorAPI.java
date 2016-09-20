@@ -46,10 +46,5 @@ public class TripAdvisorAPI implements API {
         return rooms;
     }
 
-    @Override
-    public String toString() {
-        return "TripAdvisorAPI{" +
-                "rooms=" + Arrays.toString(rooms) +
-                '}';
-    }
+
 }

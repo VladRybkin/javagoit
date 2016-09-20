@@ -11,14 +11,12 @@ public class Main {
         GoogleAPI googleAPI = new GoogleAPI();
         BookingComAPI bookAndComAPI = new BookingComAPI();
         Controller controller = new Controller();
-        controller.requstRooms(200, 200, "KyivHotel", "Kiev");
-        controller.requstRooms(300, 300, "nonKyivHotel", "Kiev");
-        controller.requstRooms(400, 400, "Kyiv Hotel", "Kiev");
+        controller.requstRooms(200, 2, "KyivHotel", "Kiev");
+        controller.requstRooms(300, 3, "nonKyivHotel", "Kiev");
+        controller.requstRooms(400, 4, "Kyiv Hotel", "Kiev");
         controller.check(tripAdvisorAPI, googleAPI);
         controller.check(bookAndComAPI, googleAPI);
         controller.check(tripAdvisorAPI, bookAndComAPI);
-
-
     }
 
 
