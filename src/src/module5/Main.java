@@ -7,11 +7,19 @@ import java.util.Date;
  */
 public class Main {
     public static void main(String[] args) {
-        Controller controller=new Controller();
-        controller.check(new BookingComAPI(), new TripAdvisorAPI());
-      //  controller.requstRooms(3, 200, "Kyivhotel", "Kyiv");
-        DAO daOimpl = new DAOimpl();
-        daOimpl.findById(1);
+        TripAdvisorAPI tripAdvisorAPI = new TripAdvisorAPI();
+        GoogleAPI googleAPI = new GoogleAPI();
+        BookingComAPI bookAndComAPI = new BookingComAPI();
+        DAOimpl daoimpl = new DAOimpl();
+        Controller controller = new Controller();
+        controller.requstRooms(200, 200, "KyivHotel", "Kiev");
+        controller.requstRooms(300, 300, "nonKyivHotel", "Kiev");
+        controller.requstRooms(400, 400, "Bontiak Hotel", "Kiev");
+        controller.requstRooms(500, 500, "Bontiak Hotel", "Kiev");
+        controller.check(tripAdvisorAPI, googleAPI);
+        controller.check(bookAndComAPI, googleAPI);
+        controller.check(tripAdvisorAPI, bookAndComAPI);
+
     }
 
 
