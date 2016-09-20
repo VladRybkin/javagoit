@@ -30,8 +30,5 @@ public class DAOimpl implements DAO {
         System.out.println("Room found by id: " + id);
         return null;
     }
-    @Override
-    public Room[] getAll() {
-        return new Room[0];
-    }
+
 }

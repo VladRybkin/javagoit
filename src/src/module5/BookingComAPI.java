@@ -1,5 +1,6 @@
 package src.module5;
 
+import java.util.Arrays;
 import java.util.Date;
 
 /**
@@ -44,5 +45,12 @@ public class BookingComAPI implements API {
     @Override
     public Room[] getAll() {
         return rooms;
+    }
+
+    @Override
+    public String toString() {
+        return "BookingComAPI{" +
+                "rooms=" + Arrays.toString(rooms) +
+                '}';
     }
 }

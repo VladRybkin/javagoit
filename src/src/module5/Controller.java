@@ -41,7 +41,7 @@ public class Controller {
         Room[] roomsFromapi1=api1.getAll();
         Room[] roomsFromapi2=api2.getAll();
 
-        Room[] room=new Room[1000];
+        Room[] room=new Room[100];
         int count=0;
         for(int i=0;i<roomsFromapi1.length;i++){
             for (int j=i;j<roomsFromapi1.length;j++){

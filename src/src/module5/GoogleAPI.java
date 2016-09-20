@@ -1,5 +1,6 @@
 package src.module5;
 
+import java.util.Arrays;
 import java.util.Date;
 
 /**
@@ -45,4 +46,10 @@ public class GoogleAPI implements API {
         return rooms;
     }
 
+    @Override
+    public String toString() {
+        return "GoogleAPI{" +
+                "rooms=" + Arrays.toString(rooms) +
+                '}';
+    }
 }

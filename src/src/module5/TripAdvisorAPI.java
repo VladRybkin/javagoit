@@ -1,5 +1,6 @@
 package src.module5;
 
+import java.util.Arrays;
 import java.util.Date;
 
 /**
@@ -43,5 +44,12 @@ public class TripAdvisorAPI implements API {
     @Override
     public Room[] getAll() {
         return rooms;
+    }
+
+    @Override
+    public String toString() {
+        return "TripAdvisorAPI{" +
+                "rooms=" + Arrays.toString(rooms) +
+                '}';
     }
 }
