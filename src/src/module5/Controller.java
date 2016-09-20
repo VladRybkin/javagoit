@@ -17,23 +17,28 @@ public class Controller {
         apis[2]=new GoogleAPI();
     }
 
-    Room[] requstRooms(int price, int persons, String city, String hotel) {
-        Room[] request = new Room[100];
+    public Room[] requstRooms(int price, int persons, String city, String hotel) {
+
+        Room [] foundRooms = new Room[100];
         int count = 0;
-        for (int i = 0; i < 3; i++) {
-            for (Room room : apis[i].findRooms(price, persons, city, hotel))
-                request[count] = room;
-            count++;
+        for(int i = 0; i < 3; i++){
+            for(Room item : apis[i].findRooms(price, persons, city, hotel)){
+                foundRooms[count] = item;
+                count++;
+            }
         }
-        Room[] foundroomsArray = new Room[count];
-        for (int i=1; i<count; i++ ){
-            foundroomsArray[i]=request[i];
+
+        Room [] foundRoomsArray = new Room[count];
+        for(int i = 0; i < count; i++) {
+            foundRoomsArray[i] = foundRooms[i];
         }
-        Room[] foundroomsarray2 = new Room[count];
-        for ( int i=2; i<count; i++){
-            foundroomsarray2[i]=request[i];
+
+        DAOimpl daoImpl = new DAOimpl();
+        for(Room room : foundRoomsArray) {
+            daoImpl.save(room);
         }
-        return request;
+
+        return foundRoomsArray;
     }
 
 
