@@ -19,6 +19,7 @@ public class main6 {
         User[] salary = UserUtils.paySalaryToUsers(users);
         long[] geid = UserUtils.getUsersId(users);
 
+
     }
 
 

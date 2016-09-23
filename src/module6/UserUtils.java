@@ -11,7 +11,6 @@ public class UserUtils {
             for (int j=i+1; j<users.length; j++){
                 if (users[i].equals(users[j])){
                     users[j]=null;
-                    System.out.println(users[1]+"  unique");
 
                 }
             }
@@ -20,17 +19,23 @@ public class UserUtils {
     }
 
     static User[] usersWithContitionalBalance(User[] users, int balance){
-        for (User user : users){
-           if (user.getBalance()==balance){
+        ArrayList<User> list = new ArrayList<>();
+        for (User user : users) {
+            if (user != null) {
+                if (user.getBalance() == balance) {
+                    list.add(user);
+                }
+            }
+        }
+        User users1[] = new User[list.size()];
+        list.toArray(users1);
+        return users1;
 
-           }
-       }
-        return null;
     }
     static final User[] paySalaryToUsers(User[] users){
         for (User user : users) {
                 user.setBalance(user.getBalance() + user.getSalary());
-            System.out.println(user.getBalance()+"  user paysalary");
+            System.out.println(user.getBalance()+"  user paysalary"+ user.getFirstName());
         }
         return users;
     }
@@ -38,17 +43,19 @@ public class UserUtils {
         long[] userid= new long[users.length];
         for (int i=0; i<users.length; i++){
            userid[i] =users[i].getId();
-            System.out.println(users[1]+" userid ");
         }
         return userid;
     }
      static User[] deleteEmptyUsers(User[] users){
+         ArrayList<User> list = new ArrayList<>();
+         for (User user : users) {
+             if (user != null) {
+                 list.add(user);
+             }
+         }
+         User user1[] = new User[list.size()];
+         list.toArray(user1);
+         return user1;
+     }
 
-        return null;
-    }
-
-    @Override
-    public String toString() {
-        return "UserUtils{}";
-    }
 }

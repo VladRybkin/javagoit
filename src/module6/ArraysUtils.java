@@ -4,8 +4,6 @@ package module6;
  * Created by Vlad on 21.09.2016.
  */
  public class ArraysUtils {
-    int array[] = {10, 20, 30, 40, 50, 60, 70, 80, 90, 100};
-    double array1[] = {10, 20, 30, 40, 50, 60, 70, 80, 90, 100};
     static final int secondLargest(int array[]) {
         int max = array[6];
         int secondLargest = array[6];
@@ -174,16 +172,19 @@ package module6;
 
     }
     public final static int[] findEvenElements(int[] array){
-        int[] evenElements=new int[lengthOfEven(array)];
-        int count=0;
-        for(int i=0;i<array.length;i++){
-            if(array[i]%2==0){
-                evenElements[count]=array[i];
-                count++;
+            int[] findEvenElements = new int[array.length];
+            int counter = 0;
+            for (int item : array) {
+                if (item % 2 == 0) {
+                    findEvenElements[counter] = item;
+                    counter++;
+                }
             }
+            int[] findEvenElementsArray = new int[counter];
+            System.arraycopy(findEvenElements, 0, findEvenElementsArray, 0, counter);
+            return findEvenElementsArray;
         }
-        return evenElements;
-    }
+
 
     private static final int lengthOfEven(int[] array){
         int count=0;
@@ -194,5 +195,13 @@ package module6;
         }
         return count;
     }
+    public final static int[] reverse(int[] array) {
+        int[] reverse = new int[array.length];
+        for (int i = 0; i < array.length; i++) {
+            reverse[i] = array[array.length - i - 1];
+        }
+        return reverse;
+    }
+
 
 }
