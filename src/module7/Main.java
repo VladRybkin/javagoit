@@ -1,24 +1,19 @@
 package module7;
 
-import java.util.Collection;
-import java.util.Collections;
-import java.util.Set;
-import java.util.TreeSet;
-
 /**
  * Created by Vlad on 07.10.2016.
  */
 public class Main {
     public static void main(String[] args) {
         Sort1 sort1 =new Sort1();
-        module7.TreeSet treeSet = new module7.TreeSet();
+        TreeSetclass treeSet = new TreeSetclass();
 
         sort1.deleteDuplicates();
         sort1.deletePriceLess(200);
         sort1.getListOrder();
         sort1.getListuser();
         sort1.increaseorderANDUsercity();
-        sort1.orderSortPriseDescending();
+        sort1.decrease();
         sort1.sortItemShopCity();
         sort1.separateList(Currency.EUR);
         treeSet.deleteForCurency(Currency.EUR);

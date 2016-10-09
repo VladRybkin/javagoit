@@ -1,6 +1,7 @@
 package module7;
 
 import java.util.*;
+import java.util.TreeSet;
 
 /**
  * Created by Vlad on 07.10.2016.
@@ -10,6 +11,7 @@ public class Sort1 {
     List<User> listuser = new ArrayList<>();
     List<Order> listorder = new ArrayList<>();
     List<String> citieslist = new ArrayList<>();
+    String[] cities = {"Kyiv", "Lviv", "kharkiv", "Budapest", "Minsk", "Vienna", "Salzburg"};
 
 
     public List<User> getListuser() {
@@ -47,7 +49,7 @@ public class Sort1 {
         listorder.add(order10);
 
     }
-    void orderSortPriseDescending() {
+    void decrease() {
         Collections.sort(listorder, new Comparator<Order>() {
             @Override
             public int compare(Order o1, Order o2) {
@@ -100,18 +102,6 @@ public class Sort1 {
 
         listorder.forEach(System.out::println);
     }
-
-    void deleteDuplicates() {
-        Set<Order> deleteDuplic = new HashSet<>();
-        deleteDuplic.addAll(listorder);
-
-        System.out.println("  deleteDuplicates ");
-
-        deleteDuplic.forEach(System.out::println);
-
-
-    }
-
     void deletePriceLess(int price) {
         for (Order order : listorder) {
             if (order.getPrice() < price)
@@ -124,6 +114,19 @@ public class Sort1 {
             System.out.println(order);
         }
     }
+
+    void deleteDuplicates() {
+        Set<Order> deleteDuplic = new HashSet<>();
+        deleteDuplic.addAll(listorder);
+
+        System.out.println("  deleteDuplicates ");
+
+        deleteDuplic.forEach(System.out::println);
+
+
+    }
+
+
 
     void separateList(Currency currency) {
         listorder.clear();
@@ -142,27 +145,30 @@ public class Sort1 {
 
 
 
-//    void listUniqueSitiesInUser() {
-//
-//        for (User user : listuser) {
-//            citiesUnique.add(user.getCity());
-//        }
-//        System.out.println("  Cities in user ");
-//        for (String string : citiesUnique) {
-//            System.out.println(string);
-//        }
-//    }
+    Set<String> citiesUnique = new TreeSet<>();
 
-//    void separateUniqueSities() {
-//        listUniqueSitiesInUser();
-//        for (String city : citiesUnique) {
-//            System.out.println("  List unique city: " + "'" + city + "'");
-//            for (Order order : listorder) {
-//                if (order.getUser().getCity() == city)
-//                    System.out.println(order);
-//            }
-//        }
-//    }
+    void listUniqueSitiesInUser() {
+
+        for (User user : listuser) {
+            citiesUnique.add(user.getCity());
+        }
+        System.out.println("  user Cities   ");
+        for (String string : citiesUnique) {
+            System.out.println(string);
+        }
+    }
+
+    void separateUniqueSities() {
+        listUniqueSitiesInUser();
+        for (String city : citiesUnique) {
+            System.out.println("  List unique city: " + "'" + city + "'");
+            for (Order order : listorder) {
+                if (order.getUser().getCity() == city)
+                    System.out.println(order);
+            }
+        }
+    }
+
 
 
 }

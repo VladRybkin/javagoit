@@ -6,15 +6,15 @@ import module7.Currency;
 /**
  * Created by Vlad on 07.10.2016.
  */
-public class TreeSet {
+public class TreeSetclass {
 
-    Set<Order> orders = new java.util.TreeSet<>();
+    Set<Order> orders = new TreeSet<>();
     Sort1 sort1 =new Sort1();
     {
         orders.addAll(sort1.getListOrder());
     }
 
-    public TreeSet() {
+    public TreeSetclass() {
         orders.add(new Order(1, 100, Currency.EUR, "itemName", "shopidentificator1", new User("1", "", "", 100)));
         orders.add(new Order(1, 100, Currency.EUR, "itemName", "shopidentificator1", new User("1", "", "", 100)));
         orders.add(new Order(3, 300, Currency.EUR, "itemName", "shopidentificator3", new User("1", "", "", 100)));
@@ -27,11 +27,12 @@ public class TreeSet {
         orders.add(new Order(10, 1000, Currency.EUR, "itemName", "shopidentificator10", new User("1", "", "", 100)));
     }
 
+
     void findLastName(String lastName) {
-        orders.forEach(order -> {
+        for (Order order : orders) {
             if (order.getUser().getLastName().equals(lastName))
                 System.out.println(order);
-        });
+        };
         Queue<Order> queue = new PriorityQueue<>(new Comparator<Order>() {
             @Override
             public int compare(Order o1, Order o2) {
@@ -47,7 +48,7 @@ public class TreeSet {
                 iterator.remove();
             }
         }
-        System.out.println("  deleteForCurency(Currency currency) ");
+        System.out.println("  deleteForCurency"+(currency)) ;
         for (Order order : orders) {
             System.out.println(order);
         }
