@@ -1,33 +1,38 @@
 package src.module5;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by Vlad on 11.09.2016.
  */
 public class DAOimpl implements DAO {
+    private List<Room> list = new ArrayList<>();
     @Override
-    public Room save(Room room) {
-        System.out.println("Room save " + room.getHotelName() + " has saved");
-        return null;
+    public boolean save(Room room) {
+        return list.add(room);
     }
+
+
 
     @Override
     public boolean delete(Room room) {
-        System.out.println("Room delete " + room.getHotelName() + " has deleted");
-        return false;
+        list.remove(room);
+        return true;
     }
 
     @Override
-    public Room update(Room room) {
-        System.out.println("Room update" + room.getHotelName() + " has updated");
-        return room;
+    public Room update(Room room, int index) {
+        return list.set(index, room);
     }
 
 
     @Override
     public Room findById(long id) {
-        System.out.println("Room found by id: " + id);
+        for (Room room : list){
+            if (room.getId()== id) return room;
+        }
         return null;
     }
 
