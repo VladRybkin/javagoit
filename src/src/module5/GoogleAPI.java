@@ -32,7 +32,7 @@ public Room[] findRooms(int price, int persons, String city, String hotel) {
     //Room roomFind = new Room(1, 100, 3, new Date(), "","");
     Room roomFind = new Room(price, persons, city, hotel);
     ArrayList<Room> list = new ArrayList<>();
-    for (Room room : getAll()) {
+    for (Room room : rooms) {
         if (room.equals(roomFind)) {
             list.add(room);
         }
