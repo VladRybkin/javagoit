@@ -10,8 +10,8 @@ import java.util.List;
  */
 public class Task75 {
         public static void main(String[] args) {
-            List<Integer> integers=new ArrayList<>(10000);
-            List<String> strings=new ArrayList<>(1000);
+            List<Integer> integers=new ArrayList<>();
+            List<String> strings=new ArrayList<>();
             List<String> stringList=new LinkedList<>();
 
 
