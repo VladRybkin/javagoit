@@ -3,7 +3,7 @@ package module7;
 /**
  * Created by Vlad on 04.10.2016.
  */
-public class Order {
+public class Order implements Comparable<Order> {
     private long id;
     private int price;
     private Currency currency;
@@ -18,6 +18,11 @@ public class Order {
         this.itemName = itemName;
         this.shopIdentificator = shopIdentificator;
         this.user = user;
+    }
+
+    @Override
+    public int compareTo(Order o) {
+       return price-o.getPrice();
     }
 
     @Override
