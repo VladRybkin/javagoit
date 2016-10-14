@@ -1,5 +1,6 @@
 package Module8;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
 
@@ -7,17 +8,17 @@ import java.util.Stack;
  * Created by Vlad on 12.10.2016.
  */
 public class DaoImpl<T> implements AbstractDAO<T> {
-    Stack<T>stack=new Stack<T>();
+    List<T>list=new ArrayList<T>();
     @Override
     public T save(T t) {
-        stack.push(t);
+        list.add(t);
         System.out.println("has saved:\t");
         return null;
     }
 
     @Override
     public void delete(T t) {
-        stack.remove(t);
+        list.remove(t);
         System.out.println("has deleted:\t");
 
 
@@ -25,7 +26,7 @@ public class DaoImpl<T> implements AbstractDAO<T> {
 
     @Override
     public void deleteAll(List<T> t) {
-        stack.removeAll(t);
+        list.removeAll(t);
         System.out.println("have deleted all:\t");
 
 
@@ -34,12 +35,12 @@ public class DaoImpl<T> implements AbstractDAO<T> {
 
     @Override
     public void saveall(List<T> t) {
-        stack.addAll(t);
+       list.addAll(t);
         System.out.println("have added all:\t");
     }
 
     @Override
     public List<T> getList() {
-        return stack;
+        return list;
     }
 }
