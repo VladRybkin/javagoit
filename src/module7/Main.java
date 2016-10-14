@@ -1,10 +1,15 @@
 package module7;
 
+import java.util.ArrayList;
+import java.util.LinkedList;
+
 /**
  * Created by Vlad on 07.10.2016.
  */
 public class Main {
     public static void main(String[] args) {
+        ArrayList<String> arrayList=new ArrayList<>();
+        LinkedList<Integer> linkedList=new LinkedList<>();
         Sort1 sort1 =new Sort1();
         TreeSetclass treeSet = new TreeSetclass();
 
