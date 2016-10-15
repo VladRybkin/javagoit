@@ -51,20 +51,15 @@ public class UserDAO extends AbstractDaoimpl {
                 '}';
     }
 
-        UserDAO save(UserDAO user) {
-        save(user);
-        return user;
-    }
+
 
     @Override
     public void deleteById(long id) {
         super.deleteById(id);
-
     }
 
     @Override
     public Object get(long id) {
         return super.get(id);
     }
-
 }

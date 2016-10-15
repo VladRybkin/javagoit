@@ -27,7 +27,7 @@ public class DaoImpl<T> implements AbstractDAO<T> {
     @Override
     public void deleteAll(List<T> t) {
         list.removeAll(t);
-        System.out.println("have deleted all:\t");
+        System.out.println("has deleted all:\t");
 
 
 
@@ -36,7 +36,7 @@ public class DaoImpl<T> implements AbstractDAO<T> {
     @Override
     public void saveall(List<T> t) {
        list.addAll(t);
-        System.out.println("have added all:\t");
+        System.out.println("has saved all:\t");
     }
 
     @Override
