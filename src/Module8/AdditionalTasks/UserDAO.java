@@ -7,10 +7,6 @@ public class UserDAO extends AbstractDaoimpl {
     private long id;
     private String name;
 
-    public UserDAO(long id, String name) {
-        this.id = id;
-        this.name = name;
-    }
 
     public long getId() {
         return id;
@@ -70,4 +66,5 @@ public class UserDAO extends AbstractDaoimpl {
     public Object get(long id) {
         return super.get(id);
     }
+
 }
