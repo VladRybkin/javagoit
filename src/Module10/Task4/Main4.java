@@ -12,6 +12,10 @@ public class Main4 {
         }
 
     }
-    static void f(){}
-    static void g(){}
+    static void f(){
+        g();
+    }
+    static void g(){
+        throw new NullPointerException();
+    }
 }
