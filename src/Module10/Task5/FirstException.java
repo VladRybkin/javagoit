@@ -10,6 +10,7 @@ public class FirstException extends Throwable {
         this.message = message;
     }
 
+
     @Override
     public String getMessage() {
         return message;
