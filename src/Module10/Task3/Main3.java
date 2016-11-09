@@ -7,11 +7,11 @@ import java.util.List;
  */
 public class Main3 {
     public static void main(String[] args) {
-        List<String>list=null;
+        List<String> list = null;
         try {
             list.add("b");
-        } catch (NullPointerException e){
-            System.out.println("nullpointer"+e);
+        } catch (NullPointerException e) {
+            System.out.println("nullpointer" + e);
         }
     }
 }

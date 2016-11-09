@@ -3,7 +3,7 @@ package Module10.Task5;
 /**
  * Created by Vlad on 02.11.2016.
  */
-public class ThirdException extends Throwable {
+public class ThirdException extends Exception {
     private String message;
 
     public ThirdException(String message) {

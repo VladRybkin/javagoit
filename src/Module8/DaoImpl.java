@@ -13,7 +13,7 @@ public class DaoImpl<T> implements AbstractDAO<T> {
     public T save(T t) {
         list.add(t);
         System.out.println("has saved:\t");
-        return null;
+        return t;
     }
 
     @Override

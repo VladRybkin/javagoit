@@ -2,6 +2,7 @@ package Module9;
 
 import com.sun.org.apache.xpath.internal.operations.Or;
 
+import java.io.File;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -10,6 +11,7 @@ import java.util.stream.Collectors;
  */
 public class Main {
     public static void main(String[] args) {
+
 
         Order order0 = new Order(1, 100, Currency.USD, "itemName1", "1", new User("first name1", "last name1", "city", 100));
         Order order1 = new Order(2, 200, Currency.USD, "itemName2", "2", new User("first name2", "last name2", "city", 100));
@@ -45,12 +47,11 @@ public class Main {
 
             return 0;
         });
-        Comparator<Order> cityAndShopId= (o1, o2) -> {
-            if (o1.getShopIdentificator()==o2.getShopIdentificator())
-            {
+        Comparator<Order> cityAndShopId = (o1, o2) -> {
+            if (o1.getShopIdentificator() == o2.getShopIdentificator()) {
                 return o1.getShopIdentificator().compareTo(o2.getShopIdentificator());
             }
-            if (o1.getUser().getCity()==o2.getUser().getCity()){
+            if (o1.getUser().getCity() == o2.getUser().getCity()) {
                 return o1.getUser().getCity().compareTo(o2.getUser().getCity());
             }
             return o1.getItemName().compareTo(o2.getItemName());
@@ -64,23 +65,23 @@ public class Main {
         System.out.println(list);
 
 
-        Set<Order>set=new HashSet<>();
+        Set<Order> set = new HashSet<>();
         set.addAll(list);
         System.out.println(set);
-        List<Order>list1=new ArrayList<>();
+        List<Order> list1 = new ArrayList<>();
         list1.addAll(set);
-        list1.removeIf(x->(x.getPrice()<1500));
+        list1.removeIf(x -> (x.getPrice() < 1500));
         System.out.println(list1);
-        List<Order>list2=list.stream().filter(o ->o.getCurrency()!=Currency.EUR ).collect(Collectors.toList());
-        List<Order>list3=list.stream().filter(o->o.getCurrency()!=Currency.USD).collect(Collectors.toList());
-        list2.removeIf(x->x.getCurrency()==Currency.EUR);
-        list3.removeIf(y->y.getCurrency()==Currency.USD);
-        System.out.println("USD"+list2);
-        System.out.println("EUR"+list3);
+        List<Order> list2 = list.stream().filter(o -> o.getCurrency() != Currency.EUR).collect(Collectors.toList());
+        List<Order> list3 = list.stream().filter(o -> o.getCurrency() != Currency.USD).collect(Collectors.toList());
+        list2.removeIf(x -> x.getCurrency() == Currency.EUR);
+        list3.removeIf(y -> y.getCurrency() == Currency.USD);
+        System.out.println("USD" + list2);
+        System.out.println("EUR" + list3);
 
-        Set<String>set1=list.stream().map(o->o.getUser().getCity()).collect(Collectors.toSet());
+        Set<String> set1 = list.stream().map(o -> o.getUser().getCity()).collect(Collectors.toSet());
         List<ArrayList<Order>> megaListCity;
-        megaListCity=create2dArray(set1,list1);
+        megaListCity = create2dArray(set1, list1);
         //This loop for print
         for (ArrayList<Order> aMegaListCity : megaListCity) {
             aMegaListCity.forEach(System.out::print);
@@ -90,25 +91,23 @@ public class Main {
     }
 
 
-    private static List<Order> createCityArray(String string,List<Order> orders){
-        List<Order> list=new ArrayList<>();
-        for(Order order:orders){
-            if(order.getUser().getCity()==string){
+    private static List<Order> createCityArray(String string, List<Order> orders) {
+        List<Order> list = new ArrayList<>();
+        for (Order order : orders) {
+            if (order.getUser().getCity() == string) {
                 list.add(order);
             }
         }
         return list;
     }
-    private static List<ArrayList<Order>> create2dArray(Set<String> str,List<Order> orders){
-        List<ArrayList<Order>> list2d=new ArrayList<>();
-        for (String string:str) {
-            list2d.add((ArrayList<Order>) createCityArray(string,orders));
+
+    private static List<ArrayList<Order>> create2dArray(Set<String> str, List<Order> orders) {
+        List<ArrayList<Order>> list2d = new ArrayList<>();
+        for (String string : str) {
+            list2d.add((ArrayList<Order>) createCityArray(string, orders));
         }
         return list2d;
     }
-
-
-
 
 
 }

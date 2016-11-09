@@ -9,12 +9,12 @@ public class Main3_4 {
 
         User object = new User("vlad", 1600, 500, "Goit", 900, "euro");
         //String name, int balance, int monthsOfEmployment, String companyName, int salary, String currency
-        System.out.print("paysalary"+" ");
+        System.out.print("paysalary" + " ");
         object.paySalary();
-        System.out.println("withdrawal"+" "+ object.withdraw(600));
-        System.out.print("companylenght"+" ");
+        System.out.println("withdrawal" + " " + object.withdraw(600));
+        System.out.print("companylenght" + " ");
         object.companyNameLenfht();
-        System.out.println("increase"+" "+ object.monthIncreaser(500));
+        System.out.println("increase" + " " + object.monthIncreaser(500));
 
     }
 }

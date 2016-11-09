@@ -25,6 +25,7 @@ public class Sort1 {
     public List<Order> getListOrder() {
         return listorder;
     }
+
     Order order1 = new Order(1, 100, Currency.EUR, "itemName", "shopidentificator1", new User("1", "", "", 100));
     Order order2 = new Order(2, 200, Currency.EUR, "itemName", "shopidentificator2", new User("2", "", "", 100));
     Order order3 = new Order(3, 300, Currency.USD, "itemName", "shopidentificator3", new User("3", "", "", 100));
@@ -49,6 +50,7 @@ public class Sort1 {
         listorder.add(order10);
 
     }
+
     void decrease() {
         Collections.sort(listorder, new Comparator<Order>() {
             @Override
@@ -102,6 +104,7 @@ public class Sort1 {
 
         listorder.forEach(System.out::println);
     }
+
     void deletePriceLess(int price) {
         for (Order order : listorder) {
             if (order.getPrice() < price)
@@ -127,12 +130,11 @@ public class Sort1 {
     }
 
 
-
     void separateList(Currency currency) {
         listorder.clear();
         for (Order order : listorder) {
             if (order.getCurrency() == currency)
-               listorder.add(order);
+                listorder.add(order);
         }
 
         System.out.println("  separateList  Curency: " + currency);
@@ -141,8 +143,6 @@ public class Sort1 {
             System.out.println(order);
         }
     }
-
-
 
 
     Set<String> citiesUnique = new TreeSet<>();
@@ -168,7 +168,6 @@ public class Sort1 {
             }
         }
     }
-
 
 
 }
