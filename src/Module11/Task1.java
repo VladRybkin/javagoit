@@ -19,9 +19,8 @@ public class Task1 {
         if (!result.equals("")) System.out.println("\nResult string after replacement:\n" + result);
     }
 
-    private static String replacer(String fileName, Map<String, String> map) {
+    static String replacer(String fileName, Map<String, String> map) {
         String resultString;
-
         resultString = readFile(fileName);
         if (resultString != null) {
             System.out.println("Read from file:\n" + resultString);
@@ -30,14 +29,15 @@ public class Task1 {
         for (Map.Entry<String, String> entry : map.entrySet()) {
             try {
                 resultString = resultString.replaceAll(entry.getKey(), entry.getValue());
-            } catch (NullPointerException e){
+            } catch (NullPointerException e) {
                 System.err.println("NullPointerException exception in foreach map!");
             }
         }
 
         return resultString;
     }
-    static String readFile(String fileName){
+
+    static String readFile(String fileName) {
         FileReader fileReader;
         BufferedReader bufferedReader;
         StringBuilder stringBuilder;
