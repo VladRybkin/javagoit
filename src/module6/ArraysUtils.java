@@ -3,7 +3,7 @@ package module6;
 /**
  * Created by Vlad on 21.09.2016.
  */
- public class ArraysUtils {
+ public final class ArraysUtils {
     static final int secondLargest(int array[]) {
         int max = array[6];
         int secondLargest = array[6];
